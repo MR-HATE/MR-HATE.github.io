@@ -252,7 +252,10 @@
 &lt;p&gt;代码块显示问题。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li class=&#34;task-list-item&#34;&gt;
-&lt;p&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_5&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_5&#34;&gt; 其他实用功能亟待探索。&lt;/label&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_5&#34; checked=&#34;true&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_5&#34;&gt; 评论功能暂不可用（已修复）。&lt;/label&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;
+&lt;p&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_6&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_6&#34;&gt; 其他实用功能亟待探索。&lt;/label&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
  ]]></description>
