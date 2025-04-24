@@ -1,0 +1,742 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="教程,markdown" />
+
+
+<link rel="canonical" href="http://mr-hate.github.io/2025/03/31/Others/markdown/">
+
+
+
+  <title>
+markdown快速上手 - Others |
+Mr.Hate's blog = …ようこそ。Mr.Hate の世界へ = Stay hungry. Stay foolish.</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">markdown快速上手
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-03-31 23:45:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-31T23:45:22+08:00">2025-03-31</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Mr.Hate's blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?73635"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?265065"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?722246"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?629729"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?45819"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?786926"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Others/" itemprop="item" rel="index" title="分类于 Others"><span itemprop="name">Others</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://mr-hate.github.io/2025/03/31/Others/markdown/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/my_avatar.jpg">
+    <meta itemprop="name" content="Mr.Hate">
+    <meta itemprop="description" content="Stay hungry. Stay foolish., 我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="…ようこそ。Mr.Hate の世界へ">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="换行"><a class="anchor" href="#换行">#</a> 换行</h1>
+<p>markdown 中的换行与在其它地方键入文字不同，在使用 markdown 时，两行内容之间空了一行，表示在这两行中间添加空格。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span>（节选自<span class="exturl" data-url="aHR0cHM6Ly93d3cubWFyeGlzdHMub3JnL2NoaW5lc2UvbWFyeC8wMS5odG0jOA==">《共产党宣言》</span>）(德) 卡・马克思 弗・恩格斯 著</p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre>一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>从这一事实中可以得出两个结论：</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>共产主义已经被欧洲的一切势力公认为一种势力；</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>为了这个目的，各国共产党人集会于伦敦，拟定了如下的宣言，用英文、法文、德文、意大利文、佛拉芒文和丹麦文公布于世。</pre></td></tr></table></figure><p>显示效果：(可用鼠标选中这两行文字的方式观察换行情况)</p>
+<p>一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。</p>
+<p>有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？</p>
+<p>从这一事实中可以得出两个结论：</p>
+<p>共产主义已经被欧洲的一切势力公认为一种势力；</p>
+<p>现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。</p>
+<p>为了这个目的，各国共产党人集会于伦敦，拟定了如下的宣言，用英文、法文、德文、意大利文、佛拉芒文和丹麦文公布于世。</p>
+<h1 id="分割线"><a class="anchor" href="#分割线">#</a> 分割线</h1>
+<p>共有三种： <code>***</code> ， <code>---</code> ， <code>___</code></p>
+<p>显示效果如下：</p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token hr punctuation">***</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token hr punctuation">---</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>___</pre></td></tr></table></figure><hr />
+<hr />
+<hr />
+<p>正如你所见，在<strong>大多数</strong>渲染器上，这三种分割线显示的效果是相同的。</p>
+<h1 id="标题"><a class="anchor" href="#标题">#</a> 标题</h1>
+<p>因为本博客文章的题目都在  <code>Front Matter</code>  中规定，其中的 title 字段即为文章的标题。例如本文的  <code>Front Matter</code>  为：</p>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>---</pre></td></tr><tr><td data-num="2"></td><td><pre>title: markdown 快速上手 &#x2F;&#x2F; 文章标题</pre></td></tr><tr><td data-num="3"></td><td><pre>date: 2025-03-31 23:45:22 &#x2F;&#x2F; 文章创建的时间</pre></td></tr><tr><td data-num="4"></td><td><pre>categories: Others &#x2F;&#x2F; 文章在博客中的分类</pre></td></tr><tr><td data-num="5"></td><td><pre>tags:   &#x2F;&#x2F; 文章的标签</pre></td></tr><tr><td data-num="6"></td><td><pre>- 教程</pre></td></tr><tr><td data-num="7"></td><td><pre>---</pre></td></tr></table></figure><p>而读者<span class="spoiler" title="健康によくない(Mortis音)">说的就是你</span>在本站发评论（一般来说）又不需要大标题，综上所述这里的标题一般指的是文章中的小标题。</p>
+<p>若要建立第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 级标题，就在该标题前加一个  <code>#</code>  ，且在  <code>#</code>  后要加一个空格。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token title important"><span class="token punctuation">#</span> 一级标题</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token title important"><span class="token punctuation">##</span> 二级标题</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token title important"><span class="token punctuation">###</span> 三级标题</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token title important"><span class="token punctuation">####</span> 四级标题</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>……</pre></td></tr></table></figure><p>显示效果：</p>
+<h1 id="一级标题"><a class="anchor" href="#一级标题">#</a> 一级标题</h1>
+<h2 id="二级标题"><a class="anchor" href="#二级标题">#</a> 二级标题</h2>
+<h3 id="三级标题"><a class="anchor" href="#三级标题">#</a> 三级标题</h3>
+<h4 id="四级标题"><a class="anchor" href="#四级标题">#</a> 四级标题</h4>
+<hr />
+<h1 id="列表"><a class="anchor" href="#列表">#</a> 列表</h1>
+<p>不带编号的列表：</p>
+<p>在本段文字前加 <code>-</code>  和一个空格。</p>
+<p>带编号的列表:</p>
+<p>在要添加序号的文字前加 <code>阿拉伯数字.</code>  和一个空格。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre>共产党宣言</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>马克思 恩格斯</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>（1848年）</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token list punctuation">-</span> 1872 年德文版序言</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token list punctuation">-</span> 1882 年俄文版序言</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token list punctuation">-</span> 1883 年德文版序言</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token list punctuation">-</span> 1888 年英文版序言</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token list punctuation">-</span> 1890 年德文版序言</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token list punctuation">-</span> 1892 年波兰文版序言</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token list punctuation">-</span> 1893 年意大利文版序言</pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre>共产党宣言</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token list punctuation">1.</span> 资产者和无产者</pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token list punctuation">2.</span> 无产者和共产党人</pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token list punctuation">3.</span> 社会主义的和共产主义的文献</pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token list punctuation">4.</span> 共产党人对各种反对党派的态度</pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token list punctuation">5.</span> 人名索引</pre></td></tr></table></figure><p>显示效果：</p>
+<p>共产党宣言</p>
+<p>马克思 恩格斯</p>
+<p>（1848 年）</p>
+<ul>
+<li>1872 年德文版序言</li>
+<li>1882 年俄文版序言</li>
+<li>1883 年德文版序言</li>
+<li>1888 年英文版序言</li>
+<li>1890 年德文版序言</li>
+<li>1892 年波兰文版序言</li>
+<li>1893 年意大利文版序言</li>
+</ul>
+<p>共产党宣言</p>
+<ol>
+<li>资产者和无产者</li>
+<li>无产者和共产党人</li>
+<li>社会主义的和共产主义的文献</li>
+<li>共产党人对各种反对党派的态度</li>
+<li>人名索引</li>
+</ol>
+<p>注意</p>
+<ol>
+<li>列表时无须再使用语法换行。若在两个列表之间插入空行则会控制行距。</li>
+</ol>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token list punctuation">-</span> 1872 年德文版序言</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token list punctuation">-</span> 1882 年俄文版序言</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token list punctuation">-</span> 1883 年德文版序言</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token list punctuation">-</span> 1888 年英文版序言</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token list punctuation">-</span> 1890 年德文版序言</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token list punctuation">-</span> 1892 年波兰文版序言</pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token list punctuation">-</span> 1893 年意大利文版序言</pre></td></tr></table></figure><p>显示效果：</p>
+<ul>
+<li>
+<p>1872 年德文版序言</p>
+</li>
+<li>
+<p>1882 年俄文版序言</p>
+</li>
+<li>
+<p>1883 年德文版序言</p>
+</li>
+<li>
+<p>1888 年英文版序言</p>
+</li>
+<li>
+<p>1890 年德文版序言</p>
+</li>
+<li>
+<p>1892 年波兰文版序言</p>
+</li>
+<li>
+<p>1893 年意大利文版序言</p>
+</li>
+</ul>
+<ol start="2">
+<li>带编号的列表默认从最小的编号向最大的编号递增，而不随标注的序号改变。如：</li>
+</ol>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre>共产党宣言</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token list punctuation">1.</span> 资产者和无产者</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token list punctuation">2.</span> 无产者和共产党人</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token list punctuation">3.</span> 社会主义的和共产主义的文献</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token list punctuation">4.</span> 共产党人对各种反对党派的态度</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token list punctuation">0.</span> 人名索引</pre></td></tr></table></figure><p>显示出来的是：</p>
+<p>共产党宣言</p>
+<ol>
+<li>资产者和无产者</li>
+<li>无产者和共产党人</li>
+<li>社会主义的和共产主义的文献</li>
+<li>共产党人对各种反对党派的态度</li>
+<li>人名索引</li>
+</ol>
+<p>若要构建多级列表，则在第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>&gt;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x&gt;1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 列表符号前加至少两个空格表示缩进，个人建议直接按一次 tab 键。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token list punctuation">-</span> 多路复用技术</pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token list punctuation">-</span> 时分多路复用</pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token list punctuation">-</span> 同步时分复用</pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token list punctuation">-</span> 异步时分复用</pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token list punctuation">-</span> 频分多路复用</pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token list punctuation">-</span> 波分多路复用</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token list punctuation">-</span> 码分多路复用</pre></td></tr></table></figure><ul>
+<li>多路复用技术
+<ul>
+<li>时分多路复用
+<ul>
+<li>同步时分复用</li>
+<li>异步时分复用</li>
+</ul>
+</li>
+<li>频分多路复用</li>
+<li>波分多路复用</li>
+<li>码分多路复用</li>
+</ul>
+</li>
+</ul>
+<h1 id="引用与代码块"><a class="anchor" href="#引用与代码块">#</a> 引用与代码块</h1>
+<h2 id="引用"><a class="anchor" href="#引用">#</a> 引用</h2>
+<p>在文字两端加  <code>`</code>  来表示引用。</p>
+<p>若引用内容中有  <code>`</code>  字符，则在该文字两端加  <code>``</code>  ；</p>
+<p>若引用内容中有  <code>``</code>  ，则使用  <code>```</code>  来引用；</p>
+<p>……</p>
+<p>以此类推。<span class="spoiler" title="健康によくない(Mortis音)">禁止套娃</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token code-snippet code keyword">`引用`</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>``禁止` 引用 ```</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>```禁止 <span class="token code-snippet code keyword">``禁止引用``</span> ```</pre></td></tr></table></figure><p>显示效果：<span class="spoiler" title="健康によくない(Mortis音)">禁止套娃</span></p>
+<p><code>引用</code></p>
+<p><code>禁止`引用`</code></p>
+<p><code>禁止 `` 禁止 `引用` `` </code></p>
+<h2 id="代码块"><a class="anchor" href="#代码块">#</a> 代码块</h2>
+<p>与引用类似，将大段文字的前后各加入一行  <code>```</code>  即可形成代码块。如果中间是使用某种编程语言写成的代码，那么通常还需要在第一个  <code>```</code>  后写上全小写的语言名称。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token code"><span class="token punctuation">```</span><span class="token code-language">cpp</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token code-block language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World! "</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">```</span></span></pre></td></tr></table></figure><p>显示效果：</p>
+<figure class="highlight cpp"><figcaption data-lang="C++"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello World! "</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>在引用 markdown 代码块时，难免会遇见代码块中含有  <code>```</code>  的情况。与引用的解决方式类似，用更多的 <code>`</code>  来表示代码块。比如上面的示例，我在 markdown 编辑器中是这么写的：</p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token code"><span class="token punctuation">```</span><span class="token code-language">`markdown</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token code-block language-markdown">```cpp</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token title important"><span class="token punctuation">#</span>include &lt;bits/stdc++.h></span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>int main()&#123;</pre></td></tr><tr><td data-num="6"></td><td><pre>    std::cout &lt;&lt; "Hello World! " &lt;&lt; std::endl;</pre></td></tr><tr><td data-num="7"></td><td><pre>    return 0;</pre></td></tr><tr><td data-num="8"></td><td><pre>&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">```</span></span></pre></td></tr><tr><td data-num="10"></td><td><pre>````</pre></td></tr></table></figure><p><span class="spoiler" title="健康によくない(Mortis音)">所以你猜这篇文章套了几层 <code>`</code>  😠</span></p>
+<h1 id="基本的文字强调斜体与加粗"><a class="anchor" href="#基本的文字强调斜体与加粗">#</a> 基本的文字强调（斜体与加粗）</h1>
+<p>在要强调的文字前加  <code>*</code>  来对文字进行加粗与强调。</p>
+<ul>
+<li><code>*x*</code>  表示把 x 渲染成斜体。</li>
+<li><code>**x**</code>  表示把 x 加粗。</li>
+<li><code>***x***</code>  表示把 x 加粗并渲染成斜体。</li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token italic"><span class="token punctuation">*</span><span class="token content">师爷，高</span><span class="token punctuation">*</span></span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token bold"><span class="token punctuation">**</span><span class="token content">县长，硬</span><span class="token punctuation">**</span></span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token bold"><span class="token punctuation">**</span><span class="token content"><span class="token italic"><span class="token punctuation">*</span><span class="token content">黄老爷又高又硬</span><span class="token punctuation">*</span></span></span><span class="token punctuation">**</span></span></pre></td></tr></table></figure><p><em>师爷，高</em></p>
+<p><strong>县长，硬</strong></p>
+<p><em><strong>黄老爷又高又硬</strong></em></p>
+<h1 id="插入表格"><a class="anchor" href="#插入表格">#</a> 插入表格</h1>
+<p>markdown 中插入表格相当繁琐。格式如下：</p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre>% 第二行表示表头与正文的分割，本行上面是表头，下面是正文</pre></td></tr><tr><td data-num="2"></td><td><pre>% 如果不希望表格有表头，那么将|---|放在表格的第一行</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>|我是表头1|我是表头2|我是表头3|</pre></td></tr><tr><td data-num="5"></td><td><pre>|---|---|---|                </pre></td></tr><tr><td data-num="6"></td><td><pre>|我是内容1|我是内容2|我是内容3|</pre></td></tr><tr><td data-num="7"></td><td><pre>|我是内容4|我是内容5|我是内容6|</pre></td></tr></table></figure><p>显示效果：</p>
+<table>
+<thead>
+<tr>
+<th>我是表头 1</th>
+<th>我是表头 2</th>
+<th>我是表头 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我是内容 1</td>
+<td>我是内容 2</td>
+<td>我是内容 3</td>
+</tr>
+<tr>
+<td>我是内容 4</td>
+<td>我是内容 5</td>
+<td>我是内容 6</td>
+</tr>
+</tbody>
+</table>
+<h1 id="插入链接与图片"><a class="anchor" href="#插入链接与图片">#</a> 插入链接与图片</h1>
+<h2 id="链接"><a class="anchor" href="#链接">#</a> 链接</h2>
+<p>语法：</p>
+<p><code>[希望显示的文字](网站url)</code></p>
+<p>例如一个超链接到本站首页的文字：</p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token url">[<span class="token content">…ようこそ。Mr.Hate の世界へ</span>](<span class="token url">https://mr-hate.github.io</span>)</span></pre></td></tr></table></figure><p>显示效果：</p>
+<p><a href="https://mr-hate.github.io">… ようこそ。Mr.Hate の世界へ</a></p>
+<h2 id="图片"><a class="anchor" href="#图片">#</a> 图片</h2>
+<p>与链接类似。</p>
+<p>语法：</p>
+<p><code>![图片名称（可留空）](图片url或者路径 “图片下面标注的文字”)</code></p>
+<p>例如在此插入一张随机二次元图片：</p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token url"><span class="token operator">!</span>[<span class="token content">我超二刺猿</span>](<span class="token url">https://t.alcy.cc/ycy</span> <span class="token string">"傻逼二次元受不了了"</span>)</span></pre></td></tr></table></figure><p><img data-src="https://t.alcy.cc/ycy" alt="我超二刺猿" title="傻逼二次元受不了了" /></p>
+<h1 id="使用-katex-等渲染器将文本渲染成数学公式"><a class="anchor" href="#使用-katex-等渲染器将文本渲染成数学公式">#</a> 使用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>KaTeX</mtext></mrow><annotation encoding="application/x-tex">\KaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">K</span><span class="mspace" style="margin-right:-0.17em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 等渲染器将文本渲染成数学公式</h1>
+<p>在数学表达式两侧加  <code>$</code>  符号即可。</p>
+<p>若想用多行表示一个公式，则在首行之前和末行之后各加一行 <code>$$</code></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span> <span class="spoiler" title="健康によくない(Mortis音)">其实这一行就是渲染出来的效果，个人比较喜欢这种字体</span></p>
+<figure class="highlight markdown"><figcaption data-lang="markdown"></figcaption><table><tr><td data-num="1"></td><td><pre>笛卡尔心形曲线的极坐标形式：</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>$r=a(1-cosθ)$</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>一个矩阵：</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>$$</pre></td></tr><tr><td data-num="8"></td><td><pre>\begin&#123;pmatrix&#125;</pre></td></tr><tr><td data-num="9"></td><td><pre>    a&amp;b\\</pre></td></tr><tr><td data-num="10"></td><td><pre>    c&amp;d\\</pre></td></tr><tr><td data-num="11"></td><td><pre>\end&#123;pmatrix&#125;</pre></td></tr><tr><td data-num="12"></td><td><pre>$$</pre></td></tr><tr><td data-num="13"></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td><pre>一个复变函数积分：</pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre>$$</pre></td></tr><tr><td data-num="17"></td><td><pre>\oint \limits_&#123;C&#125; \frac&#123;dz&#125;&#123;(z-z_&#123;0&#125;)^&#123;n+1&#125;&#125;</pre></td></tr><tr><td data-num="18"></td><td><pre>$$</pre></td></tr></table></figure><p>显示效果：</p>
+<p>笛卡尔心形曲线的极坐标形式：</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>a</mi><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">r=a(1-cosθ)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">cos</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span></p>
+<p>一个矩阵：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>a</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>b</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>c</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>d</mi></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\begin{pmatrix}
+    a&amp;b\\
+    c&amp;d\\
+\end{pmatrix}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">b</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span></span></p>
+<p>一个复变函数积分：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mo>∮</mo><mi>C</mi></munder><mfrac><mrow><mi>d</mi><mi>z</mi></mrow><mrow><mo stretchy="false">(</mo><mi>z</mi><mo>−</mo><msub><mi>z</mi><mn>0</mn></msub><msup><mo stretchy="false">)</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></mfrac><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mo separator="true">,</mo><mi>n</mi><mo>=</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mo separator="true">,</mo><mi>n</mi><mo mathvariant="normal">≠</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\oint \limits_{C} \frac{dz}{(z-z_{0})^{n+1}}=
+    \begin{cases}
+    2 \pi i,n = 0 \\
+    0, n \neq 0
+    \end{cases}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.9769em;vertical-align:-1.6055em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3611em;"><span style="top:-1.8545em;margin-left:-0.4445em;"><span class="pstrut" style="height:3.36em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span></span></span></span><span style="top:-3.3611em;"><span class="pstrut" style="height:3.36em;"></span><span><span class="mop op-symbol large-op" style="margin-right:0.44445em;">∮</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.6055em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">πi</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<hr />
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 能表示的式子还有很多，参见 <a target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Mathematical_expressions"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 使用文档</a> 或 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/4a81e2tt"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>KaTeX</mtext></mrow><annotation encoding="application/x-tex">\KaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">K</span><span class="mspace" style="margin-right:-0.17em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 数学公式大全</a>。</p>
+<h1 id="结语"><a class="anchor" href="#结语">#</a> 结语</h1>
+<p>OK 大概就是这样。相信大家已经初步掌握 markdown 语法了，可以更好的在本站发表自己的见解了。</p>
+<h1 id="参见更多有关-markdown-的内容与本文的参考文献"><a class="anchor" href="#参见更多有关-markdown-的内容与本文的参考文献">#</a> 参见（更多有关 markdown 的内容与本文的参考文献）</h1>
+<ul>
+<li>
+<p>学长写的<span class="exturl" data-url="aHR0cHM6Ly9yZWRibG9vZGNlbGwub25saW5lL2QvMTctbWFya2Rvd25rdWFpLXN1LXJ1LW1lbg=="> markdown 光速上手</span></p>
+</li>
+<li>
+<p>Github 上的 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NwYXJhbm9pZC9jaGluZXNlLWNvcHl3cml0aW5nLWd1aWRlbGluZXM=">中文文案排版指北</span></p>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="ic i-tag"></i> 教程</a>
+          <a href="/tags/markdown/" rel="tag"><i class="ic i-tag"></i> markdown</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-04-01 20:58:17" itemprop="dateModified" datetime="2025-04-01T20:58:17+08:00">2025-04-01</time>
+  </span>
+  <span id="2025/03/31/Others/markdown/" class="item leancloud_visitors" data-flag-title="markdown快速上手" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Mr.Hate <i class="ic i-at"><em>@</em></i>…ようこそ。Mr.Hate の世界へ
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://mr-hate.github.io/2025/03/31/Others/markdown/" title="markdown快速上手">http://mr-hate.github.io/2025/03/31/Others/markdown/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/03/31/Others/special/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?848683" title="主题特殊功能">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Others</span>
+  <h3>主题特殊功能</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/04/01/Notes/CDMA/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?80374" title="计算机网络——码分多路复用">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Notes</span>
+  <h3>计算机网络——码分多路复用</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%A2%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text"> 换行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text"> 分割线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text"> 标题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text"> 一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">4.1.</span> <span class="toc-text"> 二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">4.1.1.1.</span> <span class="toc-text"> 四级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text"> 列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text"> 引用与代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">6.1.</span> <span class="toc-text"> 引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">6.2.</span> <span class="toc-text"> 代码块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%96%87%E5%AD%97%E5%BC%BA%E8%B0%83%E6%96%9C%E4%BD%93%E4%B8%8E%E5%8A%A0%E7%B2%97"><span class="toc-number">7.</span> <span class="toc-text"> 基本的文字强调（斜体与加粗）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E8%A1%A8%E6%A0%BC"><span class="toc-number">8.</span> <span class="toc-text"> 插入表格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%9B%BE%E7%89%87"><span class="toc-number">9.</span> <span class="toc-text"> 插入链接与图片</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-number">9.1.</span> <span class="toc-text"> 链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-number">9.2.</span> <span class="toc-text"> 图片</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-katex-%E7%AD%89%E6%B8%B2%E6%9F%93%E5%99%A8%E5%B0%86%E6%96%87%E6%9C%AC%E6%B8%B2%E6%9F%93%E6%88%90%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="toc-number">10.</span> <span class="toc-text"> 使用 KaTeX\KaTeXKATE​X 等渲染器将文本渲染成数学公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">11.</span> <span class="toc-text"> 结语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%A7%81%E6%9B%B4%E5%A4%9A%E6%9C%89%E5%85%B3-markdown-%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%8E%E6%9C%AC%E6%96%87%E7%9A%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">12.</span> <span class="toc-text"> 参见（更多有关 markdown 的内容与本文的参考文献）</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2025/03/31/Others/special/" rel="bookmark" title="主题特殊功能">主题特殊功能</a></li><li class="active"><a href="/2025/03/31/Others/markdown/" rel="bookmark" title="markdown快速上手">markdown快速上手</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Mr.Hate"
+      data-src="/images/my_avatar.jpg">
+  <p class="name" itemprop="name">Mr.Hate</p>
+  <div class="description" itemprop="description">我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">10</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01SLUhBVEU=" title="https:&#x2F;&#x2F;github.com&#x2F;MR-HATE"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9mcmVkX2hhdGU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;fred_hate"><i class="ic i-twitter"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE1NjYzODM1MDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1566383500"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vNDMwOTI0OTIx" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;430924921"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/03/31/Others/special/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/04/01/Notes/CDMA/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/03/25/MATLAB/MATLAB/" title="MATLAB学习笔记1  MATLAB快速上手">MATLAB学习笔记1  MATLAB快速上手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/18/MATLAB/variable%20&%20caculate/" title="MATLAB学习笔记2  变量与基本运算">MATLAB学习笔记2  变量与基本运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Notes/" title="分类于 Notes">Notes</a>
+</div>
+
+    <span><a href="/2025/04/01/Notes/CDMA/" title="计算机网络——码分多路复用">计算机网络——码分多路复用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/22/MATLAB/logic/" title="MATLAB学习笔记4  逻辑运算">MATLAB学习笔记4  逻辑运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/markdown/" title="markdown快速上手">markdown快速上手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/special/" title="主题特殊功能">主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/structure/" title="MATLAB学习笔记5 基本结构">MATLAB学习笔记5 基本结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Algorithim/" title="分类于 Algorithim">Algorithim</a>
+</div>
+
+    <span><a href="/2025/03/25/Algorithm/%E3%80%90%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%91-%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%E2%80%94%E2%80%94%E4%BB%A5-Leetcode-304-%E4%B8%BA%E4%BE%8B/" title="【基础算法】 二维前缀和——以 Leetcode 304 为例">【基础算法】 二维前缀和——以 Leetcode 304 为例</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/function/" title="MATLAB学习笔记6  自定义函数">MATLAB学习笔记6  自定义函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/19/MATLAB/matrix/" title="MATLAB学习笔记3  矩阵的运算">MATLAB学习笔记3  矩阵的运算</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mr.Hate @ Mr.Hate's blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">33k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">30 分钟</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/03/31/Others/markdown/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

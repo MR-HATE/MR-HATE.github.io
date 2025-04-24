@@ -1,0 +1,1019 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="学习笔记,MATLAB,数学建模" />
+
+
+<link rel="canonical" href="http://mr-hate.github.io/2025/04/19/MATLAB/matrix/">
+
+
+
+  <title>
+MATLAB学习笔记3  矩阵的运算 |
+Mr.Hate's blog = …ようこそ。Mr.Hate の世界へ = Stay hungry. Stay foolish.</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MATLAB学习笔记3  矩阵的运算
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-04-19 11:29:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-04-19T11:29:00+08:00">2025-04-19</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>3 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Mr.Hate's blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?857639"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?880448"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?135893"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?140006"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?891627"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?327368"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://mr-hate.github.io/2025/04/19/MATLAB/matrix/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/my_avatar.jpg">
+    <meta itemprop="name" content="Mr.Hate">
+    <meta itemprop="description" content="Stay hungry. Stay foolish., 我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="…ようこそ。Mr.Hate の世界へ">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="矩阵的创建"><a class="anchor" href="#矩阵的创建">#</a> 矩阵的创建</h1>
+<ol>
+<li>
+<p>直接输入法：适用于元素较少的情况。</p>
+</li>
+<li>
+<p>函数创建法.</p>
+<pre class="info"><code>常用的函数：
+1. zeros、ones、eye 分别用来生成全为 0 的矩阵，全为 1 的矩阵和单位矩阵。
+2. rand、randi、randn 分别用来创建均匀分布的随机数、均匀分布的随机整数和标准正态分布的随机数。</code></pre><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">e.g.\ 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mspace"> </span><span class="mord">1</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">%&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    宇宙安全声明：</pre></td></tr><tr><td data-num="3"></td><td><pre>    这里仅仅举出每个函数常用的例子，更多用法参见 MATLAB 的 help 文档。</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">%&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment">% 生成了一个大小为 100*100，元素全为 0 的矩阵。</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">100</span>，<span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment">% 生成了一个大小为 100*99，元素全为 0 的矩阵。说明 matlab 支持函数重载。</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">% zeros 默认元素数据类型是 double，如果要指定元素类型，添加对应参数，具体参见 help 文档。</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">100</span>，<span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token comment">% 生成元素全为 1 的矩阵，其余功能与 zeros 相同。</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token comment">% 生成一个单位矩阵。其余功能与 zeros 相同。单位矩阵：主对角线元素为 1，其余元素都为 0。</span></pre></td></tr></table></figure><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi><mtext> </mtext><mn>2</mn></mrow><annotation encoding="application/x-tex">e.g.\ 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mspace"> </span><span class="mord">2</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>a<span class="token operator">=</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>；</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">% 生成一个 100*100 的随机数方阵，每个元素都在 0 到 1 上均匀分布。</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">% 生成一个 5*6 的随机数方阵，每个元素都在 0 到 1 上均匀分布。</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token function">randi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">% 生成一个 10*11 的随机数方阵，每个元素 都是整数 且在区间 [1,5] 上均匀分布。</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token function">randn</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">% 生成一个 5*6 的随机数方阵，每个元素 都是整数 且满足标准正态分布。</span></pre></td></tr></table></figure></li>
+<li>
+<p>导入本地文件的数据.</p>
+</li>
+</ol>
+<p>支持的格式：txt.dat\csv\xls\xlsb\xlsm<br />
+xlsx\xltm\xltx\ods</p>
+<h1 id="矩阵元素的修改与删除"><a class="anchor" href="#矩阵元素的修改与删除">#</a> 矩阵元素的修改与删除</h1>
+<h2 id="修改"><a class="anchor" href="#修改">#</a> 修改</h2>
+<ul>
+<li>直接用等号赋值的方法对矩阵中引用位置的元素进行修改。</li>
+<li>使用线性索引（单下标的索引）方式对矩阵的元素进行修改。</li>
+</ul>
+<p>注意：如果赋值时将一个或多个元素置于矩阵现有行列元素的边界之外，则会将矩阵的大小进行拓展，MATLAB 会将没有赋值的位置的元素自动用  <code>0</code>  填充，使矩阵保持完整的矩形。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">e.g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></p>
+<p>创建一个矩阵 A:</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">;</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token operator">:</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>此时 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>修改第二行第三列的元素：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>修改后的 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>修改第二行的元素：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"><span>b</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>修改后的 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>分别修改第一行，第三行的第一列和第二列元素：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>修改后的 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>空括号中的两个参数，前面的叫做行索引，后面的称为列索引，可以看作一个元素为 * 要被修改的元素的下标 * 组成的集合（也可以看作数组或者向量）。</p>
+<p>线性索引：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>修改后的 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>修改后的 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>在现有矩阵外的某个位置进行赋值：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">666</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>修改后的 A 的如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>666</td>
+</tr>
+</tbody>
+</table>
+<h2 id="删除"><a class="anchor" href="#删除">#</a> 删除</h2>
+<ul>
+<li>
+<p>套用修改元素的语法，将等号右侧换成空向量 <code>[]</code> ，即可删除对应的元素。注意，这种方法通常只能删除整行或整列的元素，否则会报错。</p>
+</li>
+<li>
+<p>或者使用线性索引来删除矩阵的元素。使用线性索引删除后，MATLAB 会将矩阵中剩下的元素按线性索引的顺序放入一个向量中。使用线性索引可以删除任意位置的元素，不需要删除矩阵的一整行或一整列。</p>
+</li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<p>仍然拿修改部分的 A 矩阵举例：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行代码后的 A 矩阵如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>使用线性索引：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行代码后的 A 矩阵如下表表示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到执行代码后删除了第一个元素的同时也将原矩阵转换成了一个向量。要想删除后保持原矩阵的样子，要使用 reshape 函数，后面讲。</p>
+<h1 id="矩阵的拼接与重排"><a class="anchor" href="#矩阵的拼接与重排">#</a> 矩阵的拼接与重排</h1>
+<h2 id="矩阵的拼接"><a class="anchor" href="#矩阵的拼接">#</a> 矩阵的拼接</h2>
+<ul>
+<li>
+<p>横向拼接：<br />
+要求 A 和 B 行数相同。使用：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token punctuation">[</span>A<span class="token punctuation">,</span>B<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">[</span>A B<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>都能将 A，B 横向拼接成一个大矩阵。</p>
+</li>
+<li>
+<p>纵向拼接：<br />
+要求 A 和 B 列数相同。使用：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token punctuation">[</span>A<span class="token punctuation">;</span>B<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>都能将 A，B 纵向拼接成一个大矩阵。</p>
+</li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mn>.1</mn></mrow><annotation encoding="application/x-tex">e.g. 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.1</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    B<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>    C<span class="token operator">=</span><span class="token punctuation">[</span>A<span class="token punctuation">,</span>B<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    D<span class="token operator">=</span><span class="token punctuation">[</span>A B<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    E<span class="token operator">=</span><span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span></pre></td></tr></table></figure><p>运行结果：</p>
+<pre class="info"><code>C &#x3D;     1     2     3     4     5     6     7     8     9    10
+
+D &#x3D;     1     2     3     4     5     6     7     8     9    10
+
+E &#x3D;     1     2     3     4     5     6     7     8     9    10</code></pre><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi><mtext> </mtext><mn>2</mn></mrow><annotation encoding="application/x-tex">e.g. \ 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mspace"> </span><span class="mord">2</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>B<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>C<span class="token operator">=</span><span class="token punctuation">[</span>A<span class="token punctuation">;</span>B<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="5"></td><td><pre>D<span class="token operator">=</span><span class="token function">cat</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span></pre></td></tr></table></figure><p>运行结果为：</p>
+<pre class="info"><code>C &#x3D;
+
+1     2     3     4     5
+6     7     8     9    10
+
+
+D &#x3D;
+
+     1     2     3     4     5
+     6     7     8     9    10</code></pre><h2 id="矩阵的重排"><a class="anchor" href="#矩阵的重排">#</a> 矩阵的重排</h2>
+<ul>
+<li>reshape 函数：更改矩阵的形状，用法：</li>
+</ul>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">reshape</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span></pre></td></tr></table></figure><p>或</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">reshape</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token punctuation">[</span>m<span class="token punctuation">,</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span><span class="token function">randi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>B<span class="token operator">=</span><span class="token function">reshape</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>C<span class="token operator">=</span><span class="token function">reshape</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果如下所示：<br />
+<img data-src="https://s1.imagehub.cc/images/2025/04/19/0e1d151e0c30bb81f34417019104ea01.png" alt="" /></p>
+<p>可以发现重排时按照线性索引对函数进行重排，即一列一列地放。</p>
+<ul>
+<li>sort 函数：对矩阵或者向量进行排序，sort (A,dim), 最后面加一个参数 <code>decscend</code> ，变成降序排列。
+<ul>
+<li>dim=1 沿着行方向（上到下）对矩阵每一列进行升序排列。</li>
+<li>dim=2 沿着列方向（左到右）对矩阵每一行进行升序排列。</li>
+</ul>
+</li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span> <span class="token function">randi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>B<span class="token operator">=</span><span class="token function">sort</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>C<span class="token operator">=</span><span class="token function">sort</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果如下所示：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/19/f07324486d69c681fcdd23759197a484.png" alt="" /></p>
+<ul>
+<li>sortorws：基于某一列对矩阵进行排序，同一行元素不变。用法：sortrows (A, 某列的索引)，在最后面加 <code>descend</code> ，变成从大到小的降序排列。</li>
+</ul>
+<p>$e.g. $</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span> <span class="token function">randi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>B<span class="token operator">=</span><span class="token function">sortrows</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果如下所示</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/19/d7f981171021f954e6ffa45854af5423.png" alt="" /></p>
+<h1 id="矩阵的运算"><a class="anchor" href="#矩阵的运算">#</a> 矩阵的运算</h1>
+<h2 id="调用函数运算"><a class="anchor" href="#调用函数运算">#</a> 调用函数运算</h2>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sum</td>
+<td>矩阵求和函数</td>
+</tr>
+<tr>
+<td>prof</td>
+<td>矩阵求积函数</td>
+</tr>
+<tr>
+<td>cumsum</td>
+<td>计算 A 的累计和</td>
+</tr>
+<tr>
+<td>diff</td>
+<td>计算差分</td>
+</tr>
+<tr>
+<td>mean</td>
+<td>计算平均值</td>
+</tr>
+<tr>
+<td>median</td>
+<td>计算中位数</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>计算众数</td>
+</tr>
+<tr>
+<td>var</td>
+<td>计算方差</td>
+</tr>
+<tr>
+<td>std</td>
+<td>计算标准差</td>
+</tr>
+<tr>
+<td>min</td>
+<td>求最小值</td>
+</tr>
+<tr>
+<td>max</td>
+<td>求最大值</td>
+</tr>
+</tbody>
+</table>
+<p>具体用法请查阅 help 文档</p>
+<h2 id="矩阵的算术运算"><a class="anchor" href="#矩阵的算术运算">#</a> 矩阵的算术运算</h2>
+<h3 id="矩阵加减"><a class="anchor" href="#矩阵加减">#</a> 矩阵加减</h3>
+<p>与线性代数知识稍有不同，MATLAB 中矩阵加减运算不需要参与运算的两矩阵大小完全相同。而是符合 MATLAB 矩阵算术运算的五种兼容模式即可。如下图所示：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/19/cee4c2febb18b6dd8e3a0488604db5a1.png" alt="" /></p>
+<h3 id="矩阵乘除乘方"><a class="anchor" href="#矩阵乘除乘方">#</a> 矩阵乘除乘方</h3>
+<p><code>*</code>  表示矩阵的乘法，运算规则等和线性代数的知识符合。<br />
+ <code>.*</code>  表示矩阵对应位置元素相乘。矩阵大小满足上面的五种兼容模式。</p>
+<p>$e.g. $</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span> <span class="token function">randi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>B<span class="token operator">=</span> <span class="token function">randi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>C<span class="token operator">=</span>A<span class="token operator">*</span>B<span class="token punctuation">;</span></pre></td></tr></table></figure><p>运算结果如下图所示：<br />
+<img data-src="https://s1.imagehub.cc/images/2025/04/19/8568055c84be4e792d4bf2a241885d44.png" alt="" /></p>
+<p>===</p>
+<p>众所周知线性代数没有除法只有逆矩阵相乘。而 MATLAB 中定义了矩阵的除法。</p>
+<p><code>/</code> （右除）</p>
+<p><code>\</code> （左除）</p>
+<p>以上两种运算用于求解方程组，使用率较低，使用的时候可以参见 help 文档。</p>
+<p><code>.\</code> （点除）对应元素相除。运算时要满足五种兼容模式。</p>
+<p><code>^</code>  定义了矩阵的幂运算。</p>
+<p><code>.^</code>  对应位置求幂。</p>
+<h2 id="矩阵的转置"><a class="anchor" href="#矩阵的转置">#</a> 矩阵的转置</h2>
+<p><code>'</code>  定义了矩阵的转置。转置即矩阵行列互换。</p>
+<p>当矩阵元素中含有复数时，对矩阵求转置会把其中的复数元素求共轭。</p>
+<p>而  <code>.'</code>  则会在求转置之后将原复数保留在矩阵中。</p>
+<h2 id="矩阵的逻辑运算"><a class="anchor" href="#矩阵的逻辑运算">#</a> 矩阵的逻辑运算</h2>
+<table>
+<thead>
+<tr>
+<th><code>==</code></th>
+<th><code>~=</code></th>
+<th><code>&gt;</code></th>
+<th><code>&gt;=</code></th>
+<th><code>&lt;</code></th>
+<th><code>&lt;=</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等于</td>
+<td>不等于</td>
+<td>大于</td>
+<td>大于等于</td>
+<td>小于</td>
+<td>小于等于</td>
+</tr>
+</tbody>
+</table>
+<p>关系运算符可以表示两个数组中元素的关系，如果比较的结果为真，返回 1，否则返回 0。</p>
+
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 学习笔记</a>
+          <a href="/tags/MATLAB/" rel="tag"><i class="ic i-tag"></i> MATLAB</a>
+          <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag"><i class="ic i-tag"></i> 数学建模</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-04-22 23:00:01" itemprop="dateModified" datetime="2025-04-22T23:00:01+08:00">2025-04-22</time>
+  </span>
+  <span id="2025/04/19/MATLAB/matrix/" class="item leancloud_visitors" data-flag-title="MATLAB学习笔记3  矩阵的运算" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Mr.Hate <i class="ic i-at"><em>@</em></i>…ようこそ。Mr.Hate の世界へ
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://mr-hate.github.io/2025/04/19/MATLAB/matrix/" title="MATLAB学习笔记3  矩阵的运算">http://mr-hate.github.io/2025/04/19/MATLAB/matrix/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/04/18/MATLAB/variable%20&%20caculate/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?548410" title="MATLAB学习笔记2  变量与基本运算">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>MATLAB学习笔记2  变量与基本运算</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/04/22/MATLAB/logic/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?508265" title="MATLAB学习笔记4  逻辑运算">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>MATLAB学习笔记4  逻辑运算</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text"> 矩阵的创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0%E7%9A%84%E4%BF%AE%E6%94%B9%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="toc-number">2.</span> <span class="toc-text"> 矩阵元素的修改与删除</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">2.2.</span> <span class="toc-text"> 删除</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8B%BC%E6%8E%A5%E4%B8%8E%E9%87%8D%E6%8E%92"><span class="toc-number">3.</span> <span class="toc-text"> 矩阵的拼接与重排</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%8B%BC%E6%8E%A5"><span class="toc-number">3.1.</span> <span class="toc-text"> 矩阵的拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%87%8D%E6%8E%92"><span class="toc-number">3.2.</span> <span class="toc-text"> 矩阵的重排</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">4.</span> <span class="toc-text"> 矩阵的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">4.1.</span> <span class="toc-text"> 调用函数运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">4.2.</span> <span class="toc-text"> 矩阵的算术运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8A%A0%E5%87%8F"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 矩阵加减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E9%99%A4%E4%B9%98%E6%96%B9"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 矩阵乘除乘方</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE"><span class="toc-number">4.3.</span> <span class="toc-text"> 矩阵的转置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-number">4.4.</span> <span class="toc-text"> 矩阵的逻辑运算</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Mr.Hate"
+      data-src="/images/my_avatar.jpg">
+  <p class="name" itemprop="name">Mr.Hate</p>
+  <div class="description" itemprop="description">我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">10</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01SLUhBVEU=" title="https:&#x2F;&#x2F;github.com&#x2F;MR-HATE"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9mcmVkX2hhdGU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;fred_hate"><i class="ic i-twitter"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE1NjYzODM1MDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1566383500"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vNDMwOTI0OTIx" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;430924921"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/04/18/MATLAB/variable%20&%20caculate/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/04/22/MATLAB/logic/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/special/" title="主题特殊功能">主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/03/25/MATLAB/MATLAB/" title="MATLAB学习笔记1  MATLAB快速上手">MATLAB学习笔记1  MATLAB快速上手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/markdown/" title="markdown快速上手">markdown快速上手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Algorithim/" title="分类于 Algorithim">Algorithim</a>
+</div>
+
+    <span><a href="/2025/03/25/Algorithm/%E3%80%90%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%91-%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%E2%80%94%E2%80%94%E4%BB%A5-Leetcode-304-%E4%B8%BA%E4%BE%8B/" title="【基础算法】 二维前缀和——以 Leetcode 304 为例">【基础算法】 二维前缀和——以 Leetcode 304 为例</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/18/MATLAB/variable%20&%20caculate/" title="MATLAB学习笔记2  变量与基本运算">MATLAB学习笔记2  变量与基本运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/19/MATLAB/matrix/" title="MATLAB学习笔记3  矩阵的运算">MATLAB学习笔记3  矩阵的运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/function/" title="MATLAB学习笔记6  自定义函数">MATLAB学习笔记6  自定义函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/structure/" title="MATLAB学习笔记5 基本结构">MATLAB学习笔记5 基本结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Notes/" title="分类于 Notes">Notes</a>
+</div>
+
+    <span><a href="/2025/04/01/Notes/CDMA/" title="计算机网络——码分多路复用">计算机网络——码分多路复用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/22/MATLAB/logic/" title="MATLAB学习笔记4  逻辑运算">MATLAB学习笔记4  逻辑运算</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mr.Hate @ Mr.Hate's blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">33k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">30 分钟</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/04/19/MATLAB/matrix/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

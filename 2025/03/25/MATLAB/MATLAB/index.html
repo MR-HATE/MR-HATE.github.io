@@ -1,0 +1,590 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="学习笔记,MATLAB,数学建模" />
+
+
+<link rel="canonical" href="http://mr-hate.github.io/2025/03/25/MATLAB/MATLAB/">
+
+
+
+  <title>
+MATLAB学习笔记1  MATLAB快速上手 |
+Mr.Hate's blog = …ようこそ。Mr.Hate の世界へ = Stay hungry. Stay foolish.</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MATLAB学习笔记1  MATLAB快速上手
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-03-25 14:02:38">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-25T14:02:38+08:00">2025-03-25</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Mr.Hate's blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?20417"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?547306"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?64672"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?167754"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?783365"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?226106"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://mr-hate.github.io/2025/03/25/MATLAB/MATLAB/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/my_avatar.jpg">
+    <meta itemprop="name" content="Mr.Hate">
+    <meta itemprop="description" content="Stay hungry. Stay foolish., 我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="…ようこそ。Mr.Hate の世界へ">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <ul>
+<li>
+<p>本文基于 bilibili : 陈小鱼学姐<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTNrSFZlTUVUWi8/c3BtX2lkX2Zyb209MzMzLjMzNy5zZWFyY2gtY2FyZC5hbGwuY2xpY2smYW1wO3ZkX3NvdXJjZT1jOTkxNjRkM2U5YzBkZGYzOGY1NzNmYmYzYmY1OWJkMw==">【MATLAB 快速上手】45min 搞定基础语法与使用技巧！</span></p>
+</li>
+<li>
+<p>本文 MATLAB 版本为 R2024a</p>
+</li>
+</ul>
+<h1 id="主界面介绍"><a class="anchor" href="#主界面介绍">#</a> 主界面介绍</h1>
+<p><img data-src="https://s1.imagehub.cc/images/2025/03/27/686fb04812de8b2d4ff3f06468561bb2.png" alt="主界面截图" /></p>
+<h1 id="语法"><a class="anchor" href="#语法">#</a> 语法</h1>
+<h2 id="1-赋值语句"><a class="anchor" href="#1-赋值语句">#</a> 1. 赋值语句</h2>
+<h3 id="1变量赋值"><a class="anchor" href="#1变量赋值">#</a> （1）变量赋值</h3>
+<p>语法：</p>
+<p><code>“变量名” = “数值” ;</code></p>
+<p>运行后会把变量和值都显示在右侧的工作区。双击变量会出现一个电子表格，表示存放在变量中的矩阵，如下图。</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/03/27/5487f5f5ae2ea9fc51c5c478eb6373aa.png" alt="变量赋值示例" /></p>
+<h3 id="2矩阵赋值"><a class="anchor" href="#2矩阵赋值">#</a> （2）矩阵赋值</h3>
+<p>语法：</p>
+<p><code>“变量名” = [……] ;</code></p>
+<p>“[]” 中填入矩阵元素。若矩阵有多行，用分号将元素分开表示换行，双击矩阵的变量名查看矩阵元素，如下图。</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/03/27/1ccf5e8e5eaa9f9a2579b2e5e4057ac3.png" alt="矩阵赋值示例" /></p>
+<h2 id="2取矩阵中的值"><a class="anchor" href="#2取矩阵中的值">#</a> 2. 取矩阵中的值</h2>
+<h3 id="1-取一个值"><a class="anchor" href="#1-取一个值">#</a> (1) 取一个值</h3>
+<p>a= A(2,2);</p>
+<p>（含义：将矩阵 A 的第二行第二列的元素取出并赋值给变量 a；<strong>行列下标均从 1 开始</strong>）</p>
+<h3 id="2-取多个值"><a class="anchor" href="#2-取多个值">#</a> (2) 取多个值</h3>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>a1<span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>（含义：将矩阵 A 的第二行第二列与第二行第三列的元素取出并赋值给变量（矩阵，向量）a1）</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/03/27/4d3d6b60db40b01bbce700241490937d.png" alt="取出矩阵中的值示例" /></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>a2<span class="token operator">=</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>（含义：将矩阵 A 的第二行第二列到第二行第四列的元素（含两端点）取出并赋值给变量（矩阵，向量）a2）；</p>
+<p>如果只写 “：”，则取出这一行（列）中的所有元素。</p>
+<p>如果写 A（:,:）;，则取出 A 的所有元素。</p>
+<h2 id="3矩阵运算"><a class="anchor" href="#3矩阵运算">#</a> 3. 矩阵运算</h2>
+<h3 id="1-矩阵的转置"><a class="anchor" href="#1-矩阵的转置">#</a> (1) 矩阵的转置</h3>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>C<span class="token operator">=</span>A<span class="token operator">'</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>（含义：将矩阵 A 转置后赋值给变量 C）；</p>
+<h3 id="2-矩阵之间的运算"><a class="anchor" href="#2-矩阵之间的运算">#</a> (2) 矩阵之间的运算</h3>
+<h4 id="1-加减"><a class="anchor" href="#1-加减">#</a> ① 加减</h4>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>D<span class="token operator">=</span>A<span class="token operator">+</span>B<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>E<span class="token operator">=</span>A<span class="token operator">-</span>B<span class="token punctuation">;</span></pre></td></tr></table></figure><p>注：（运算符合线性代数中矩阵的运算相关知识）</p>
+<ul>
+<li>
+<p>如果把两个维度不同的矩阵相加减，会报错，有时不报错但会出现错误答案。</p>
+</li>
+<li>
+<p>矩阵加（减）一个数：将每个元素都加（减）这个数，生成一个新的矩阵。</p>
+</li>
+</ul>
+<h4 id="2-乘叉乘与点乘"><a class="anchor" href="#2-乘叉乘与点乘">#</a> ② 乘 (叉乘与点乘)</h4>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>X<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>Y<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">;</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>Z1<span class="token operator">=</span>X<span class="token operator">*</span>Y<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>Z2<span class="token operator">=</span>X<span class="token operator">.*</span>Y<span class="token punctuation">;</span></pre></td></tr></table></figure><p>Z1 的结果为 [19,22;43,50]; 不难看出是矩阵乘法运算</p>
+<p>Z2 的结果为 [5,12;21,32]; 对应位置相乘，是矩阵的点乘运算。</p>
+<p><strong>除法运算同理。</strong></p>
+<h2 id="4打印"><a class="anchor" href="#4打印">#</a> 4. 打印</h2>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h2 id="5分支结构"><a class="anchor" href="#5分支结构">#</a> 5. 分支结构</h2>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">if</span> a<span class="token operator">&lt;</span><span class="token number">5</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    ……</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">else</span> <span class="token keyword">if</span> a<span class="token operator">==</span><span class="token number">5</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    ……</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">else</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    ……</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">end</span></pre></td></tr></table></figure><h2 id="6循环结构"><a class="anchor" href="#6循环结构">#</a> 6. 循环结构</h2>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">for</span> <span class="token number">i</span><span class="token operator">=</span><span class="token number">1</span>：<span class="token number">1</span>：<span class="token number">10</span>  </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">% 变量名 = 初始值：步长：终止值 只写两个冒号默认步长为一，两边为开始终止值</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    ……</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">end</span></pre></td></tr></table></figure><h1 id="注1工作区"><a class="anchor" href="#注1工作区">#</a> 注 1：工作区</h1>
+<p>MATLAB 里只有一个工作区，即便有多个代码同时运行，他们共用同一个工作区。因此可能出现错误结果，因此我们每次运行程序都要清空工作区。</p>
+<p>在开头键入代码：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>clc<span class="token punctuation">;</span>    <span class="token comment">% 清空命令行</span></pre></td></tr><tr><td data-num="2"></td><td><pre>clear<span class="token punctuation">;</span>  <span class="token comment">% 清空工作区</span></pre></td></tr><tr><td data-num="3"></td><td><pre>close all<span class="token punctuation">;</span>  <span class="token comment">% 清空图表</span></pre></td></tr></table></figure><h1 id="注2在matlab编辑器中输入块注释"><a class="anchor" href="#注2在matlab编辑器中输入块注释">#</a> 注 2：在 MATLAB 编辑器中输入块注释</h1>
+<p>MATLAB 支持通过  <code>%&#123;</code>  和  <code>%&#125;</code>  定义多行注释块。需注意以下语法规则：</p>
+<ol>
+<li><strong>符号必须单独成行</strong>： <code>%&#123;</code>  和  <code>%&#125;</code>  必须分别位于独立行，且前后不能有其他字符（包括空格）。</li>
+<li><strong>不支持嵌套</strong>：块注释不能嵌套使用。</li>
+</ol>
+<p><strong>示例：</strong></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">%&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>这是多行注释的第一行</pre></td></tr><tr><td data-num="3"></td><td><pre>这是第二行</pre></td></tr><tr><td data-num="4"></td><td><pre>这是第三行</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">%&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% 注释外的代码正常执行</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">%% 带分割线的注释</span></pre></td></tr><tr><td data-num="9"></td><td><pre>独立行，且前后不能有其他字符（包括空格）。</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token number">2.</span> <span class="token operator">*</span><span class="token operator">*</span>不支持嵌套<span class="token operator">*</span><span class="token operator">*</span>：块注释不能嵌套使用。</pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token operator">*</span><span class="token operator">*</span>示例：<span class="token operator">*</span><span class="token operator">*</span></pre></td></tr><tr><td data-num="13"></td><td><pre>```matlab</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token comment">%&#123;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>这是多行注释的第一行</pre></td></tr><tr><td data-num="16"></td><td><pre>这是第二行</pre></td></tr><tr><td data-num="17"></td><td><pre>这是第三行</pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token comment">%&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% 注释外的代码正常执行</span></pre></td></tr><tr><td data-num="20"></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token comment">%% 带分割线的注释</span></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 学习笔记</a>
+          <a href="/tags/MATLAB/" rel="tag"><i class="ic i-tag"></i> MATLAB</a>
+          <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag"><i class="ic i-tag"></i> 数学建模</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-04-22 23:06:02" itemprop="dateModified" datetime="2025-04-22T23:06:02+08:00">2025-04-22</time>
+  </span>
+  <span id="2025/03/25/MATLAB/MATLAB/" class="item leancloud_visitors" data-flag-title="MATLAB学习笔记1  MATLAB快速上手" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Mr.Hate <i class="ic i-at"><em>@</em></i>…ようこそ。Mr.Hate の世界へ
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://mr-hate.github.io/2025/03/25/MATLAB/MATLAB/" title="MATLAB学习笔记1  MATLAB快速上手">http://mr-hate.github.io/2025/03/25/MATLAB/MATLAB/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/03/25/Algorithm/%E3%80%90%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%91-%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%E2%80%94%E2%80%94%E4%BB%A5-Leetcode-304-%E4%B8%BA%E4%BE%8B/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?733702" title="【基础算法】 二维前缀和——以 Leetcode 304 为例">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Algorithim</span>
+  <h3>【基础算法】 二维前缀和——以 Leetcode 304 为例</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/03/31/Others/special/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?340298" title="主题特殊功能">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Others</span>
+  <h3>主题特殊功能</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> 主界面介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 赋值语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">2.1.1.</span> <span class="toc-text"> （1）变量赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E7%9F%A9%E9%98%B5%E8%B5%8B%E5%80%BC"><span class="toc-number">2.1.2.</span> <span class="toc-text"> （2）矩阵赋值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%8F%96%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. 取矩阵中的值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%96%E4%B8%80%E4%B8%AA%E5%80%BC"><span class="toc-number">2.2.1.</span> <span class="toc-text"> (1) 取一个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%96%E5%A4%9A%E4%B8%AA%E5%80%BC"><span class="toc-number">2.2.2.</span> <span class="toc-text"> (2) 取多个值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">2.3.</span> <span class="toc-text"> 3. 矩阵运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE"><span class="toc-number">2.3.1.</span> <span class="toc-text"> (1) 矩阵的转置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9F%A9%E9%98%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">2.3.2.</span> <span class="toc-text"> (2) 矩阵之间的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8A%A0%E5%87%8F"><span class="toc-number">2.3.2.1.</span> <span class="toc-text"> ① 加减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B9%98%E5%8F%89%E4%B9%98%E4%B8%8E%E7%82%B9%E4%B9%98"><span class="toc-number">2.3.2.2.</span> <span class="toc-text"> ② 乘 (叉乘与点乘)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E6%89%93%E5%8D%B0"><span class="toc-number">2.4.</span> <span class="toc-text"> 4. 打印</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="toc-number">2.5.</span> <span class="toc-text"> 5. 分支结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-number">2.6.</span> <span class="toc-text"> 6. 循环结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A81%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-number">3.</span> <span class="toc-text"> 注 1：工作区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A82%E5%9C%A8matlab%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5%E5%9D%97%E6%B3%A8%E9%87%8A"><span class="toc-number">4.</span> <span class="toc-text"> 注 2：在 MATLAB 编辑器中输入块注释</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Mr.Hate"
+      data-src="/images/my_avatar.jpg">
+  <p class="name" itemprop="name">Mr.Hate</p>
+  <div class="description" itemprop="description">我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">10</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01SLUhBVEU=" title="https:&#x2F;&#x2F;github.com&#x2F;MR-HATE"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9mcmVkX2hhdGU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;fred_hate"><i class="ic i-twitter"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE1NjYzODM1MDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1566383500"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vNDMwOTI0OTIx" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;430924921"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/03/25/Algorithm/%E3%80%90%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%91-%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%E2%80%94%E2%80%94%E4%BB%A5-Leetcode-304-%E4%B8%BA%E4%BE%8B/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/03/31/Others/special/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/22/MATLAB/logic/" title="MATLAB学习笔记4  逻辑运算">MATLAB学习笔记4  逻辑运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Notes/" title="分类于 Notes">Notes</a>
+</div>
+
+    <span><a href="/2025/04/01/Notes/CDMA/" title="计算机网络——码分多路复用">计算机网络——码分多路复用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Algorithim/" title="分类于 Algorithim">Algorithim</a>
+</div>
+
+    <span><a href="/2025/03/25/Algorithm/%E3%80%90%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%91-%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%E2%80%94%E2%80%94%E4%BB%A5-Leetcode-304-%E4%B8%BA%E4%BE%8B/" title="【基础算法】 二维前缀和——以 Leetcode 304 为例">【基础算法】 二维前缀和——以 Leetcode 304 为例</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/function/" title="MATLAB学习笔记6  自定义函数">MATLAB学习笔记6  自定义函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/18/MATLAB/variable%20&%20caculate/" title="MATLAB学习笔记2  变量与基本运算">MATLAB学习笔记2  变量与基本运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/special/" title="主题特殊功能">主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/markdown/" title="markdown快速上手">markdown快速上手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/19/MATLAB/matrix/" title="MATLAB学习笔记3  矩阵的运算">MATLAB学习笔记3  矩阵的运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/structure/" title="MATLAB学习笔记5 基本结构">MATLAB学习笔记5 基本结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/03/25/MATLAB/MATLAB/" title="MATLAB学习笔记1  MATLAB快速上手">MATLAB学习笔记1  MATLAB快速上手</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mr.Hate @ Mr.Hate's blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">33k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">30 分钟</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/03/25/MATLAB/MATLAB/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
