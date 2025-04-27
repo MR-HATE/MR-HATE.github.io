@@ -1,0 +1,891 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="…ようこそ。Mr.Hate の世界へ" href="http://mr-hate.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="学习笔记,MATLAB,数学建模" />
+
+
+<link rel="canonical" href="http://mr-hate.github.io/2025/04/27/MATLAB/2Dgraph/">
+
+
+
+  <title>
+MATLAB学习笔记8 二维图像绘制 |
+Mr.Hate's blog = …ようこそ。Mr.Hate の世界へ = Stay hungry. Stay foolish.</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MATLAB学习笔记8 二维图像绘制
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-04-27 18:55:05">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-04-27T18:55:05+08:00">2025-04-27</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>6k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Mr.Hate's blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?315060"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?528869"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?29601"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?687745"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?617538"></li>
+          <li class="item" data-background-image="https://t.alcy.cc/ycy?981943"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://mr-hate.github.io/2025/04/27/MATLAB/2Dgraph/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/my_avatar.jpg">
+    <meta itemprop="name" content="Mr.Hate">
+    <meta itemprop="description" content="Stay hungry. Stay foolish., 我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="…ようこそ。Mr.Hate の世界へ">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <div class="note warning">
+<p>本文含有多图，请注意流量消耗！</p>
+</div>
+<h1 id="基本绘图函数"><a class="anchor" href="#基本绘图函数">#</a> 基本绘图函数</h1>
+<h2 id="plot-函数"><a class="anchor" href="#plot-函数">#</a>  <code>plot</code>  函数</h2>
+<p>绘制二维线图。</p>
+<h4 id="向量和矩阵数据"><a class="anchor" href="#向量和矩阵数据">#</a> 向量和矩阵数据</h4>
+<ul>
+<li>
+<p>plot (X,Y) 创建 Y 中数据对 X 中对应值的二维线图。</p>
+<p>要绘制由线段连接的一组坐标，请将 X 和 Y 指定为相同长度的向量。</p>
+<p>要在同一组坐标区上绘制多组坐标，请将 X 或 Y 中的至少一个指定为矩阵。</p>
+</li>
+<li>
+<p>plot (X,Y,LineSpec) 使用指定的线型、标记和颜色创建绘图。</p>
+</li>
+</ul>
+<div class="note info">
+<p>有关  <code>LineSpec</code>  参数，参见本文 2.1 部分 ‘线型、标记和颜色’ 。</p>
+</div>
+<ul>
+<li>
+<p>plot (X1,Y1,...,Xn,Yn) 在同一组坐标轴上绘制多对 x 和 y 坐标。此语法可替代将坐标指定为矩阵的形式。</p>
+</li>
+<li>
+<p>plot (X1,Y1,LineSpec1,...,Xn,Yn,LineSpecn) 可为每个 x-y 对组指定特定的线型、标记和颜色。您可以对某些 x-y 对组指定 LineSpec，而对其他对组省略它。例如，plot (X1,Y1,&quot;o&quot;,X2,Y2) 对第一个 x-y 对组指定标记，但没有对第二个对组指定标记。</p>
+</li>
+<li>
+<p>plot (Y) 绘制 Y 对一组隐式 x 坐标的图。</p>
+<ol>
+<li>
+<p>如果 Y 是向量，则 x 坐标范围从 1 到 length (Y)。</p>
+</li>
+<li>
+<p>如果 Y 是矩阵，则对于 Y 中的每个列，图中包含一个对应的行。x 坐标的范围是从 1 到 Y 的行数。</p>
+</li>
+<li>
+<p>如果 Y 包含复数，MATLAB 绘制 Y 的虚部对 Y 的实部的图。如果同时指定了 X 和 Y，虚部将被忽略。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>plot (Y,LineSpec) 使用隐式 x 坐标绘制 Y，并指定线型、标记和颜色。</p>
+</li>
+</ul>
+<h4 id="表数据"><a class="anchor" href="#表数据">#</a> 表数据</h4>
+<ul>
+<li>
+<p>plot (tbl,xvar,yvar) 绘制表 tbl 中的变量 xvar 和 yvar。要绘制一个数据集，请为 xvar 指定一个变量，为 yvar 指定一个变量。要绘制多个数据集，请为 xvar、yvar 或两者指定多个变量。如果两个参量都指定多个变量，它们指定的变量数目必须相同。 (自 R2022a 起)</p>
+</li>
+<li>
+<p>plot (tbl,yvar) 绘制表中的指定变量对表的行索引的图。如果该表是时间表，则绘制指定变量对时间表的行时间的图。 (自 R2022a 起)</p>
+</li>
+</ul>
+<h4 id="其他选项"><a class="anchor" href="#其他选项">#</a> 其他选项</h4>
+<ul>
+<li>
+<p>plot (ax,___) 在目标坐标区上显示绘图。将坐标区指定为上述任一语法中的第一个参量。</p>
+</li>
+<li>
+<p>plot (___,Name,Value) 使用一个或多个名称 - 值参量指定 Line 属性。这些属性应用于绘制的所有线条。需要在上述任一语法中的所有参量之后指定名称 - 值参量。有关属性列表，请参阅 Line 属性。</p>
+</li>
+<li>
+<p>p = plot (___) 返回一个 Line 对象或 Line 对象数组。创建绘图后，使用 p 修改该绘图的属性。有关属性列表，请参阅 Line 属性。</p>
+</li>
+</ul>
+<hr />
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9wbG90Lmh0bWw=">plot</span>。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span> 常见用法举例：</p>
+<ul>
+<li>画单个图像</li>
+</ul>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>X<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>Y<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">0.2</span><span class="token operator">:</span><span class="token number">1.7</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/98f4b2fbd05c47e92776c5ce68aa8b99.png" alt="" /></p>
+<ul>
+<li>画多个图像</li>
+</ul>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>t<span class="token operator">=</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">0.01</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>t<span class="token operator">=</span>t<span class="token operator">.'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>x<span class="token operator">=</span><span class="token punctuation">[</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>y<span class="token operator">=</span><span class="token punctuation">[</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/8967a44ab4764239dd353a2c18401654.png" alt="" /></p>
+<p>或者</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x1<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>x2<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>x3<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>y1<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x1<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>y2<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x2<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>y3<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x3<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y1<span class="token punctuation">,</span>x2<span class="token punctuation">,</span>y2<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">,</span>x3<span class="token punctuation">,</span>y3<span class="token operator">+</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/d87ed473a319d1812edd0e6e83a19b91.png" alt="" /></p>
+<ul>
+<li>指定线形，标记，颜色：</li>
+</ul>
+<p>更改 <code>x1</code>  图像线型为蓝色虚线</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x1<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>x2<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>x3<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>y1<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x1<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>y2<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x2<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>y3<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>x3<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y1<span class="token punctuation">,</span><span class="token string">':b'</span><span class="token punctuation">,</span>x2<span class="token punctuation">,</span>y2<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">,</span>x3<span class="token punctuation">,</span>y3<span class="token operator">+</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p><img data-src="https://s1.imagehub.cc/images/2025/04/27/c85cd9f1135e472dfa09780dff1f32c5.png" alt="" /></p>
+<h2 id="fplot-函数"><a class="anchor" href="#fplot-函数">#</a>  <code>fplot</code>  函数</h2>
+<p>绘制表达式或函数，图线更平滑。</p>
+<ul>
+<li>
+<p>fplot (f) 在默认区间 [-5 5]（对于 x）绘制由函数 y = f (x) 定义的曲线。</p>
+</li>
+<li>
+<p>fplot (f,xinterval) 将在指定区间绘图。将区间指定为 [xmin xmax] 形式的二元素向量。</p>
+</li>
+<li>
+<p>fplot (funx,funy) 在默认区间 [-5 5]（对于 t）绘制由 x = funx (t) 和 y = funy (t) 定义的曲线。</p>
+</li>
+<li>
+<p>fplot (funx,funy,tinterval) 将在指定区间绘图。将区间指定为 [tmin tmax] 形式的二元素向量。</p>
+</li>
+<li>
+<p>fplot (___,LineSpec) 指定线型、标记符号和线条颜色。例如，'-r' 绘制一根红色线条。在上述语法中的任何输入参量组合后使用此选项。</p>
+</li>
+<li>
+<p>fplot (___,Name,Value) 使用一个或多个名称 - 值对组参量指定线条属性。例如，'LineWidth',2 指定 2 磅的线宽。</p>
+</li>
+<li>
+<p>fplot (ax,___) 将图形绘制到 ax 指定的坐标区中，而不是当前坐标区 (gca) 中。指定坐标区作为第一个输入参量。</p>
+</li>
+<li>
+<p>fp = fplot (___) 返回 FunctionLine 对象或 ParameterizedFunctionLine 对象，具体情况取决于输入。使用 fp 查询和修改特定线条的属性。有关属性列表，请参阅 Fu nctionLine 属性 或 ParameterizedFunctionLine 属性。</p>
+</li>
+<li>
+<p>[x,y] = fplot (___) 返回函数的纵坐标和横坐标，而不创建绘图。在以后的版本中将会删除该语法。请改用线条对象 fp 的 XData 和 YData 属性。</p>
+</li>
+</ul>
+<hr />
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9mcGxvdC5odG1s">fplot</span>。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span> 常见用法示例：</p>
+<ul>
+<li>绘制函数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>s</mi><mi>i</mi><mi>n</mi><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">y= sin{\frac{1}{x}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span> 在区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>0.2</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0 , 0.2]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0.2</span><span class="mclose">]</span></span></span></span> 的图像</li>
+</ul>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">fplot</span><span class="token punctuation">(</span><span class="token operator">@</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/3eeed8ebe2e3ef5468179f19841d8436.png" alt="" /></p>
+<p>对比  <code>plot</code>  函数画出来的图像。</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x<span class="token operator">=</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">0.005</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>y<span class="token operator">=</span><span class="token operator">@</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">1.</span><span class="token operator">/</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token function">y</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="ihttps://s1.imagehub.cc/images/2025/04/27/521655c8fb07e51509860be449498190.png" alt="" /></p>
+<p>可以看出由于 <code>fplot</code>  函数 “知道” 用户要画的函数图像，因此作出来的图与 <code>plot</code>  函数相比更加精准，且使用起来更方便（例如不用指定自变量精度）。</p>
+<ul>
+<li>绘制参数方程图像，并指定线型</li>
+</ul>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">fplot</span><span class="token punctuation">(</span><span class="token operator">@</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>t<span class="token operator">.*</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">@</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>t<span class="token operator">.*</span><span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'-r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/1be30af21be8b2ef4b5f6fb13ea77837.png" alt="" /></p>
+<h2 id="其它坐标系的二维曲线"><a class="anchor" href="#其它坐标系的二维曲线">#</a> 其它坐标系的二维曲线：</h2>
+<h3 id="semilogx-函数"><a class="anchor" href="#semilogx-函数">#</a>  <code>semilogx</code>  函数</h3>
+<p>对数坐标图。</p>
+<ul>
+<li>
+<p>semilogx (X,Y) 在 x 轴上使用以 10 为底的对数刻度、在 y 轴上使用线性刻度来绘制 x 和 y 坐标。</p>
+<ul>
+<li>
+<p>要绘制由线段连接的一组坐标，请将 X 和 Y 指定为相同长度的向量。</p>
+</li>
+<li>
+<p>要在同一组坐标区上绘制多组坐标，请将 X 或 Y 中的至少一个指定为矩阵。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>semilogx (X,Y,LineSpec) 使用指定的线型、标记和颜色创建绘图。</p>
+</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9zZW1pbG9neC5odG1s">semilogx</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x<span class="token operator">=</span><span class="token function">logspace</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>y<span class="token operator">=</span>x<span class="token punctuation">;</span></pre></td></tr></table></figure><p><img data-src="https://s1.imagehub.cc/images/2025/04/27/7a8cd6fa600c2afeaa61c4cd585617b2.png" alt="" /></p>
+<p>可以看到，我们在输入参数的时候用的是对数坐标，而绘图的时候还是以普通坐标系来作图的。</p>
+<h2 id="polarplot-函数"><a class="anchor" href="#polarplot-函数">#</a>  <code>polarplot</code>  函数</h2>
+<p>极坐标图。</p>
+<ul>
+<li>polarplot (theta,rho) 在极坐标中绘制线条，由 theta 表示弧度角，rho 表示每个点的半径值。输入必须为长度相等的向量或大小相等的矩阵。如果输入为矩阵，polarplot 将绘制 rho 的列对 theta 的列的图。也可以一个输入为向量，另一个为矩阵，但向量的长度必须与矩阵的一个维度相等。</li>
+</ul>
+<p>示例</p>
+<ul>
+<li>polarplot (theta,rho,LineSpec) 设置线条的线型、标记符号和颜色。</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9wb2xhcnBsb3QuaHRtbA==">polarplot</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>theta<span class="token operator">=</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">0.01</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>rho<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span><span class="token operator">.*</span><span class="token function">cos</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">polarplot</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span>rho<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/1f8a86cbf5cfbb71dd30881b4dccb200.png" alt="" /></p>
+<h2 id="bar-函数"><a class="anchor" href="#bar-函数">#</a>  <code>bar</code>  函数</h2>
+<p>条形图。</p>
+<ul>
+<li>
+<p>bar (y) 创建一个条形图，y 中的每个元素对应一个条形。</p>
+<ul>
+<li>
+<p>要绘制单个条形序列，请将 y 指定为长度为 m 的向量。这些条形沿 x 轴从 1 到 m 依次放置。</p>
+</li>
+<li>
+<p>要绘制多个条形序列，请将 y 指定为矩阵，每个序列对应一列。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>bar (x,y) 在 x 指定的位置绘制条形。</p>
+</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9iYXIuaHRtbA==">bar</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<p>统计某个指标 2022 至 2024 三年间的数据，绘制条形图：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2022</span><span class="token operator">:</span><span class="token number">2024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">;</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">;</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">bar</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/454de22febdac1d71604402a93dfd463.png" alt="" /></p>
+<p>若  <code>bar</code>  函数不指定参数  <code>X</code>  则默认的  <code>X</code>  序列为从  <code>1</code>  开始的自然数。</p>
+<h2 id="histogram-函数"><a class="anchor" href="#histogram-函数">#</a>  <code>histogram</code>  函数</h2>
+<p>直方图</p>
+<ul>
+<li>
+<p>histogram (X) 基于 X 创建直方图。histogram 函数使用 **<em> 自动分 bin 算法</em> **，然后返回均匀宽度的 bin，这些 bin 可涵盖 X 中的元素范围并显示分布的基本形状。histogram 将 bin 显示为矩形条，这样每个矩形的高度就表示 bin 中的元素数量。</p>
+</li>
+<li>
+<p>histogram (X,nbins) 指定 bin 的数量。</p>
+</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9oaXN0b2dyYW0uaHRtbA==">histogram</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<p>对 1000 个随机数样本，绘制为一幅含有 25 个 bin 的直方图。</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">rng</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>A<span class="token operator">=</span><span class="token function">randn</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>nbin<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">histogram</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>nbin<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/2e976165c71fdff32b7906260198e44a.png" alt="" /></p>
+<h2 id="pie-函数"><a class="anchor" href="#pie-函数">#</a>  <code>pie</code>  函数</h2>
+<p>饼状图。</p>
+<ul>
+<li>
+<p>pie (X) 使用 X 中的数据绘制饼图。饼图的每个扇区代表 X 中的一个元素。</p>
+<ul>
+<li>
+<p>如果 sum (X) ≤ 1，X 中的值直接指定饼图扇区的面积。如果 sum (X) &lt; 1，pie 仅绘制部分饼图。</p>
+</li>
+<li>
+<p>如果 sum (X) &gt; 1，则 pie 通过 X/sum (X) 对值进行归一化，以确定饼图的每个扇区的面积。</p>
+</li>
+<li>
+<p>如果 X 为 categorical 数据类型，则扇区对应于类别。每个扇区的面积是类别中的元素数除以 X 中的元素数的结果。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>pie (X,explode) 将扇区从饼图偏移一定位置。explode 是一个由与 X 对应的零值和非零值组成的向量或矩阵。pie 函数仅将对应于 explode 中的非零元素的扇区偏移一定的位置。如果 X 为 categorical 数据类型，则 explode 可以是由对应于类别的零值和非零值组成的向量，或者是由要偏移的类别名称组成的元胞数组。</p>
+</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9waWUuaHRtbA==">pie</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">pie</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>显然 sum (x)&gt;1, 因此先对各元素归一化后再绘图。</p>
+<p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/7a568e4a11628175bf70d2e265057d52.png" alt="" /></p>
+<h2 id="scatter-函数"><a class="anchor" href="#scatter-函数">#</a>  <code>scatter</code>  函数</h2>
+<p>散点图。</p>
+<ul>
+<li>
+<p>scatter (x,y) 在向量 x 和 y 指定的位置创建一个包含圆形标记的散点图。</p>
+<ul>
+<li>
+<p>要绘制一组坐标，请将 x 和 y 指定为等长向量。</p>
+</li>
+<li>
+<p>要在同一组坐标区上绘制多组坐标，请将 x 或 y 中的至少一个指定为矩阵。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>scatter (x,y,sz) 指定圆圈大小。要对所有圆使用相同的大小，请将 sz 指定为标量。要绘制不同大小的每个圆，请将 sz 指定为向量或矩阵。</p>
+</li>
+<li>
+<p>scatter (x,y,sz,c) 指定圆颜色。您可以为所有圆指定一种颜色，也可以更改颜色。例如，您可以通过将 c 指定为 &quot;red&quot; 来绘制所有红色圆。</p>
+</li>
+<li>
+<p>scatter (___,&quot;filled&quot;) 填充圆。可将 &quot;filled&quot; 选项与上述语法中的任何输入参量组合一起使用。</p>
+</li>
+<li>
+<p>scatter (___,mkr) 指定标记类型。</p>
+</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9zY2F0dGVyLmh0bWw=">scatter</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>t <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">50</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>X <span class="token operator">=</span> <span class="token number">16</span><span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token operator">.^</span><span class="token number">3</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>y <span class="token operator">=</span> <span class="token number">13</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">5</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>t<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token operator">-</span> <span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">scatter</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">,</span> "filled"<span class="token punctuation">)</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/28b8385e93f913fdc3a8b8809bb846ba.png" alt="我喜欢你" title="我喜欢你" /></p>
+<h2 id="quiver-函数"><a class="anchor" href="#quiver-函数">#</a>  <code>quiver</code>  函数</h2>
+<p>矢量图。</p>
+<ul>
+<li>
+<p>quiver (X,Y,U,V) 在由 X 和 Y 指定的笛卡尔坐标上绘制具有定向分量 U 和 V 的箭头。例如，第一个箭头源于点 X (1) 和 Y (1)，按 U (1) 水平延伸，按 V (1) 垂直延伸。默认情况下，quiver 函数缩放箭头长度，使其不重叠。</p>
+</li>
+<li>
+<p>quiver (U,V) 在等距点上绘制箭头，箭头的定向分量由 U 和 V 指定。</p>
+<ul>
+<li>
+<p>如果 U 和 V 是向量，则箭头的 x 坐标范围是从 1 到 U 和 V 中的元素数，并且 y 坐标均为 1。</p>
+</li>
+<li>
+<p>如果 U 和 V 是矩阵，则箭头的 x 坐标范围是从 1 到 U 和 V 中的列数，箭头的 y 坐标范围是从 1 到 U 和 V 中的行数。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>参见说明文档: <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9xdWl2ZXIuaHRtbA==">quiver</span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<p>画一个由原点指向  <code>(0,0)</code>  的向量。</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">quiver</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/1610a6d8259d53bd3081f96a69556d9a.png" alt="" /></p>
+<h1 id="图形属性的设置"><a class="anchor" href="#图形属性的设置">#</a> 图形属性的设置</h1>
+<h2 id="线型-标记和颜色"><a class="anchor" href="#线型-标记和颜色">#</a> 线型、标记和颜色</h2>
+<p>指定包含符号的字符串标量或者字符向量。符号可以按任意顺序显示。例： “--or” 是带有圆形标记的红色虚线。</p>
+<p>不需要同时指定所有三个特征。例如，如果忽略线型只指定标记，则绘图只显示标记不显示线条。</p>
+<p>参见官方文档 <span class="exturl" data-url="aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL3JlZi9wbG90Lmh0bWw/c2VhcmNoSGlnaGxpZ2h0PXBsb3QmYW1wO3NfdGlkPXNyY2h0aXRsZV9zdXBwb3J0X3Jlc3VsdHNfMV9wbG90I2J0eml0b3Rfc2VwX213XzNhNzZmMDU2LTI4ODItNDRkNy04ZTczLWM2OTVjMGM1NGNhOA==">LineSpec 参数</span></p>
+<h2 id="图形标注"><a class="anchor" href="#图形标注">#</a> 图形标注</h2>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title (图像标题)</td>
+<td>图像标题，通过参数指定。</td>
+<td>支持 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
+</tr>
+<tr>
+<td>xlabel (x 轴说明)</td>
+<td>x 轴说明，通过参数指定。</td>
+<td>支持 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
+</tr>
+<tr>
+<td>ylabel (y 轴说明)</td>
+<td>y 轴说明，通过参数指定。</td>
+<td>支持 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
+</tr>
+<tr>
+<td>text (x,y, 图形说明)</td>
+<td>在（x,y) 点处添加说明</td>
+<td>支持 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></td>
+</tr>
+<tr>
+<td>legend (图例 1, 图例 2,……)</td>
+<td>添加图例</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h2 id="坐标控制"><a class="anchor" href="#坐标控制">#</a> 坐标控制</h2>
+<h3 id="axis-函数"><a class="anchor" href="#axis-函数">#</a>  <code>axis</code>  函数</h3>
+<p>常见用法：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span>xmin<span class="token punctuation">,</span>xmax<span class="token punctuation">,</span>ymin<span class="token punctuation">,</span>ymax<span class="token punctuation">,</span>zmin<span class="token punctuation">,</span>zmax<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% 指定当前图像坐标区的范围</span></pre></td></tr></table></figure><p>其他用法：</p>
+<ul>
+<li>axis equal：横纵坐标值采取等长刻度</li>
+<li>axis square：产生正方形坐标系（默认为矩形）</li>
+<li>axis auto：使用默认设置</li>
+<li>axis off：取消坐标轴</li>
+<li>axis on：显示坐标轴</li>
+</ul>
+<h3 id="grid-命令"><a class="anchor" href="#grid-命令">#</a>  <code>grid</code>  命令</h3>
+<p>给坐标系加网格和边框</p>
+<ul>
+<li>grid on：显示网格线</li>
+<li>grid off：不显示网格线</li>
+</ul>
+<p>默认无网格线。</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<p>绘制<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi><mtext> </mtext><mi>x</mi></mrow><annotation encoding="application/x-tex">sin\ x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mspace"> </span><span class="mord mathnormal">x</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi><mtext> </mtext><mrow><mn>2</mn><mi>x</mi></mrow></mrow><annotation encoding="application/x-tex">sin\ {2x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mspace"> </span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">x</span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi><mtext> </mtext><mfrac><mi>x</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">sin\ \frac{x}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mspace"> </span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 的函数曲线并标注</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>x<span class="token operator">=</span><span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>y<span class="token operator">=</span><span class="token punctuation">[</span><span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token operator">*</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">% 绘图</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1.5</span><span class="token punctuation">,</span><span class="token number">1.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">% 选定坐标区间范围</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin x'</span><span class="token punctuation">,</span><span class="token string">'sin 2x'</span><span class="token punctuation">,</span><span class="token string">'sin x/2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">% 图例</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">title</span><span class="token punctuation">(</span>"三个正弦函数y<span class="token operator">=</span>sin<span class="token punctuation">&#123;</span>x<span class="token punctuation">&#125;</span>"<span class="token punctuation">,</span>"FontSize"<span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">% 标题</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">% x 轴标注</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">% y 轴标注</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token function">text</span><span class="token punctuation">(</span><span class="token number">2.5</span><span class="token punctuation">,</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'sin&#123;x&#125;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">% 在某点处标注</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token function">text</span><span class="token punctuation">(</span><span class="token number">2.5</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'sin&#123;2x&#125;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">% 在某点处标注</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/da3e13228a662cc36059db34748adc1e.png" alt="" /></p>
+<h2 id="图形保持"><a class="anchor" href="#图形保持">#</a> 图形保持</h2>
+<h3 id="hold-命令"><a class="anchor" href="#hold-命令">#</a>  <code>hold</code>  命令</h3>
+<ul>
+<li>hold on：控制保持原有图形</li>
+<li>hold off：控制刷新图形窗口</li>
+<li>hold：在两种状态之间切换</li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi mathvariant="normal">.</mi><mi>g</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">e.g.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">e</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span></span></span></span></p>
+<p>使用 <code>hold</code>  命令绘制一个同心圆</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre>t <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>x<span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>y<span class="token operator">=</span><span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'-b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>axis equal<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>hold on<span class="token punctuation">;</span>  <span class="token comment">% 保持当前作出的图像不会被后面的绘图命令覆盖。</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre>x1<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>y1<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>y<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token function">plot</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>y1<span class="token punctuation">,</span><span class="token string">'-r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><p>运行结果：</p>
+<p><img data-src="https://s1.imagehub.cc/images/2025/04/27/bb42ee9660e08c9386c63f78b15d9f90.png" alt="" /></p>
+
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 学习笔记</a>
+          <a href="/tags/MATLAB/" rel="tag"><i class="ic i-tag"></i> MATLAB</a>
+          <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag"><i class="ic i-tag"></i> 数学建模</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-04-27 19:09:35" itemprop="dateModified" datetime="2025-04-27T19:09:35+08:00">2025-04-27</time>
+  </span>
+  <span id="2025/04/27/MATLAB/2Dgraph/" class="item leancloud_visitors" data-flag-title="MATLAB学习笔记8 二维图像绘制" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Mr.Hate <i class="ic i-at"><em>@</em></i>…ようこそ。Mr.Hate の世界へ
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://mr-hate.github.io/2025/04/27/MATLAB/2Dgraph/" title="MATLAB学习笔记8 二维图像绘制">http://mr-hate.github.io/2025/04/27/MATLAB/2Dgraph/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/04/25/MATLAB/common%20function/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?246787" title="MATLAB学习笔记7  特殊函数与常用函数">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>MATLAB学习笔记7  特殊函数与常用函数</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/04/27/MATLAB/PS/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;t.alcy.cc&#x2F;ycy?52895" title="MATLAB使用小技巧">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>MATLAB使用小技巧</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%98%E5%9B%BE%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text"> 基本绘图函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#plot-%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">  plot  函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E5%92%8C%E7%9F%A9%E9%98%B5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 向量和矩阵数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> 表数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%80%89%E9%A1%B9"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> 其他选项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fplot-%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">  fplot  函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BA%8C%E7%BB%B4%E6%9B%B2%E7%BA%BF"><span class="toc-number">1.3.</span> <span class="toc-text"> 其它坐标系的二维曲线：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#semilogx-%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">  semilogx  函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#polarplot-%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">  polarplot  函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bar-%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">  bar  函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#histogram-%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.</span> <span class="toc-text">  histogram  函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pie-%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text">  pie  函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scatter-%E5%87%BD%E6%95%B0"><span class="toc-number">1.8.</span> <span class="toc-text">  scatter  函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quiver-%E5%87%BD%E6%95%B0"><span class="toc-number">1.9.</span> <span class="toc-text">  quiver  函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%B1%9E%E6%80%A7%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> 图形属性的设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E5%9E%8B-%E6%A0%87%E8%AE%B0%E5%92%8C%E9%A2%9C%E8%89%B2"><span class="toc-number">2.1.</span> <span class="toc-text"> 线型、标记和颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E6%A0%87%E6%B3%A8"><span class="toc-number">2.2.</span> <span class="toc-text"> 图形标注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E6%8E%A7%E5%88%B6"><span class="toc-number">2.3.</span> <span class="toc-text"> 坐标控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#axis-%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.1.</span> <span class="toc-text">  axis  函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grid-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.2.</span> <span class="toc-text">  grid  命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E4%BF%9D%E6%8C%81"><span class="toc-number">2.4.</span> <span class="toc-text"> 图形保持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hold-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.4.1.</span> <span class="toc-text">  hold  命令</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Mr.Hate"
+      data-src="/images/my_avatar.jpg">
+  <p class="name" itemprop="name">Mr.Hate</p>
+  <div class="description" itemprop="description">我反对这样一种社会秩序，在这种社会秩序中，一个人完全没有做任何有用的事情就可能积累数亿美元的财富，而数百万男男女女一辈子工作，只能勉强维持悲惨的生活。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">13</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL01SLUhBVEU=" title="https:&#x2F;&#x2F;github.com&#x2F;MR-HATE"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9mcmVkX2hhdGU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;fred_hate"><i class="ic i-twitter"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE1NjYzODM1MDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1566383500"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vNDMwOTI0OTIx" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;430924921"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/04/25/MATLAB/common%20function/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/04/27/MATLAB/PS/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/27/MATLAB/PS/" title="MATLAB使用小技巧">MATLAB使用小技巧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/25/MATLAB/common%20function/" title="MATLAB学习笔记7  特殊函数与常用函数">MATLAB学习笔记7  特殊函数与常用函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/18/MATLAB/variable%20&%20caculate/" title="MATLAB学习笔记2  变量与基本运算">MATLAB学习笔记2  变量与基本运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/special/" title="主题特殊功能">主题特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/24/MATLAB/structure/" title="MATLAB学习笔记5 基本结构">MATLAB学习笔记5 基本结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/19/MATLAB/matrix/" title="MATLAB学习笔记3  矩阵的运算">MATLAB学习笔记3  矩阵的运算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Others/" title="分类于 Others">Others</a>
+</div>
+
+    <span><a href="/2025/03/31/Others/markdown/" title="markdown快速上手">markdown快速上手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/04/27/MATLAB/2Dgraph/" title="MATLAB学习笔记8 二维图像绘制">MATLAB学习笔记8 二维图像绘制</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Notes/" title="分类于 Notes">Notes</a>
+</div>
+
+    <span><a href="/2025/04/01/Notes/CDMA/" title="计算机网络——码分多路复用">计算机网络——码分多路复用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/03/25/MATLAB/MATLAB/" title="MATLAB学习笔记1  MATLAB快速上手">MATLAB学习笔记1  MATLAB快速上手</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mr.Hate @ Mr.Hate's blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">41k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">37 分钟</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/04/27/MATLAB/2Dgraph/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
